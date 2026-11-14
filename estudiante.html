@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Panel - TecnoCampus</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="brand"><i class="fa-solid fa-graduation-cap"></i> Tecno<span>Campus</span></a>
+        <div class="nav-actions">
+            <span id="nombreEstudianteNav" style="font-weight:600; font-size: 0.9rem; color:var(--text-muted);">Estudiante</span>
+            <button class="btn-nav" onclick="cerrarSesion()" style="background:#dc2626; border:none;">Cerrar sesión</button>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="tabs-header">
+            <button class="tab-btn active" onclick="cambiarTab(event, 'tabMisCursos')"><i class="fa-solid fa-book"></i> Mis Cursos Asignados</button>
+            <button class="tab-btn" onclick="cambiarTab(event, 'tabDiplomas')"><i class="fa-solid fa-award"></i> Cursos Ganados y Diplomas</button>
+            <button class="tab-btn" onclick="cambiarTab(event, 'tabInscribir')"><i class="fa-solid fa-cart-plus"></i> Inscribirse a Nuevo Curso</button>
+        </div>
+
+        <div id="tabMisCursos" class="tab-content active">
+            <div class="course-card" style="padding: 2rem;">
+                <h2>Mis Cursos Activos</h2>
+                <div id="listaMisCursos" style="margin-top: 1rem;"></div>
+            </div>
+        </div>
+
+        <div id="tabDiplomas" class="tab-content">
+            <div class="course-card" style="padding: 2rem;">
+                <h2>Certificaciones y Diplomas Obtenidos</h2>
+                <div id="listaDiplomas" style="margin-top: 1rem;"></div>
+            </div>
+        </div>
+
+        <div id="tabInscribir" class="tab-content">
+            <div class="course-card" style="padding: 2rem;">
+                <h2>Catálogo de Ampliación Académica</h2>
+                <p style="color:var(--text-muted);">Selecciona un curso, realiza tu pago e inscríbete de inmediato.</p>
+                <div class="courses-grid" style="margin-top: 1.5rem;">
+                    <div class="course-card" onclick="inscribirDesdePanel('Desarrollo Web Frontend Moderno ($49)')" style="background:#111;">
+                        <div class="course-thumb"><i class="fa-brands fa-html5"></i></div>
+                        <div class="course-info">
+                            <h3>Desarrollo Web Frontend Moderno</h3>
+                            <div class="course-price">$49.00 USD</div>
+                            <button class="btn-subscribe" style="margin-top:1rem;">Inscribirme</button>
+                        </div>
+                    </div>
+                    <div class="course-card" onclick="inscribirDesdePanel('Bases de Datos y Consultas SQL ($65)')" style="background:#111;">
+                        <div class="course-thumb" style="background: linear-gradient(135deg, #0d9488, #0284c7);"><i class="fa-solid fa-database"></i></div>
+                        <div class="course-info">
+                            <h3>Bases de Datos y Consultas SQL</h3>
+                            <div class="course-price">$65.00 USD</div>
+                            <button class="btn-subscribe" style="margin-top:1rem;">Inscribirme</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Pago en Panel -->
+    <div id="modalPagoEstudiante" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="cerrarModalPagoEstudiante()">&times;</button>
+            <h2>Pasarela de Pago</h2>
+            <form id="formPagoEstudiante">
+                <label>Curso:</label>
+                <input type="text" id="pagoCursoEstudianteDisplay" readonly style="background:#111; color:#a435f0; font-weight:bold;">
+                <label>Número de Tarjeta (Ficticio):</label>
+                <input type="text" id="pagoEstudianteTarjeta" required placeholder="4000 1234 5678 9010" maxlength="19">
+                <button type="submit" class="btn-subscribe" style="margin-top: 1.5rem;">Confirmar Pago e Inscribirme</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

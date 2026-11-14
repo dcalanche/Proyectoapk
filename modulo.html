@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Capacitación - TecnoCampus</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="curso.html" class="brand"><i class="fa-solid fa-arrow-left"></i> Volver al Aula Virtual</a>
+        <div class="nav-actions">
+            <span id="usuarioModulo" style="font-weight:600; font-size: 0.9rem; color:var(--text-muted);">Estudiante</span>
+            <button class="btn-nav" onclick="cerrarSesion()" style="background:#dc2626; border:none;">Cerrar sesión</button>
+        </div>
+    </nav>
+
+    <main class="main-container" style="max-width: 900px;">
+        <div class="course-main-info" style="margin-bottom: 2rem;">
+            <h1 id="tituloModulo">Módulo de Capacitación y Práctica</h1>
+            <p style="color: var(--text-muted);">Material teórico y audiovisual de apoyo para dominar los temas del curso.</p>
+        </div>
+
+        <!-- Sección de Lectura Dinámica -->
+        <div class="course-card" style="padding: 2rem; margin-bottom: 2rem;">
+            <h2 id="tituloContenidoTeorico" style="color: #a435f0;"><i class="fa-solid fa-file-lines"></i> Introducción y Conceptos Clave</h2>
+            <div id="textoContenidoTeorico" style="line-height: 1.7; color: #e2e8f0; margin-top: 1rem;">
+                <!-- Contenido inyectado dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Sección de Videos de YouTube -->
+        <div class="course-card" style="padding: 2rem; margin-bottom: 2rem;">
+            <h2 style="color: #a435f0; margin-bottom: 1rem;"><i class="fa-solid fa-video"></i> Videotutoriales de Apoyo</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Visualiza los siguientes videos explicativos para reforzar tu aprendizaje práctico:</p>
+            
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+                <iframe id="videoFrame" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" src="" title="Video de Capacitación TecnoCampus" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <button onclick="window.location.href='curso.html'" class="btn-subscribe" style="max-width: 300px;">Regresar al Aula Virtual</button>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

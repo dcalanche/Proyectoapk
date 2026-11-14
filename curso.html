@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Virtual - TecnoCampus</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav class="navbar">
+        <a href="estudiante.html" id="enlaceVolverAula" class="brand"><i class="fa-solid fa-arrow-left"></i> Volver a Mi Panel</a>
+        <div class="nav-actions">
+            <span id="usuarioBienvenida" style="font-weight:600; font-size: 0.9rem; color:var(--text-muted);">Estudiante</span>
+            <button class="btn-nav" onclick="cerrarSesion()" style="background:#dc2626; border:none;">Cerrar sesión</button>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="course-main-info" style="margin-bottom: 2rem;">
+            <h1 id="tituloCursoAula">Aula Virtual</h1>
+            <p id="descCursoAula">Material de aprendizaje activo y capacitación profesional.</p>
+        </div>
+
+        <!-- Módulo de Capacitación clickeable -->
+        <div class="course-card" onclick="window.location.href='modulo.html'" style="padding: 2rem; margin-bottom: 2rem; cursor: pointer; border: 2px solid #5624d0; transition: 0.2s;">
+            <h2><i class="fa-solid fa-book-open" style="color: #a435f0;"></i> Módulo de Capacitación y Práctica</h2>
+            <p style="color:var(--text-muted);">Revisa los conceptos clave, lectura teórica y videos explicativos antes de iniciar tu evaluación.</p>
+            <span style="color: #a435f0; font-weight: bold; font-size: 0.9rem; display: inline-block; margin-top: 0.5rem;">Acceder al material de estudio &rarr;</span>
+        </div>
+
+        <div class="course-card" style="padding: 2rem; text-align: center; background: linear-gradient(135deg, #2d2f31, #111213);">
+            <h2>¿Listo para comprobar lo aprendido?</h2>
+            <p style="color:var(--text-muted);">Completa la evaluación para obtener tu certificación oficial.</p>
+            <button onclick="irAEvaluacion()" class="btn-subscribe" style="max-width: 300px; margin: 1rem auto 0;">Ir a la Evaluación</button>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

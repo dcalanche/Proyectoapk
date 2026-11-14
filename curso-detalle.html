@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Curso - TecnoCampus</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand"><i class="fa-solid fa-arrow-left"></i> Volver al Catálogo</a>
+        <div class="nav-actions">
+            <button class="btn-nav" onclick="abrirModalLogin()">Iniciar sesión</button>
+        </div>
+    </nav>
+
+    <div class="course-detail-layout">
+        <div class="course-main-info">
+            <h1 id="detalleTitulo">Cargando curso...</h1>
+            <p id="detalleDesc" style="font-size: 1.05rem; color: #e2e8f0; margin-bottom: 1.5rem;"></p>
+            
+            <div class="learning-box" style="background: #111213; border-left: 4px solid #a435f0;">
+                <h3 style="color: #c084fc;"><i class="fa-solid fa-triangle-exclamation"></i> ¿Por qué es importante aprender esto?</h3>
+                <p id="detalleImportancia" style="font-size: 0.95rem; color: var(--text-muted); margin: 0; line-height: 1.6;"></p>
+            </div>
+
+            <div class="learning-box">
+                <h3>Lo que aprenderás</h3>
+                <div class="learning-grid">
+                    <div><i class="fa-solid fa-check" style="color:#a435f0;"></i> Fundamentos teóricos y prácticos</div>
+                    <div><i class="fa-solid fa-check" style="color:#a435f0;"></i> Ejercicios guiados paso a paso</div>
+                    <div><i class="fa-solid fa-check" style="color:#a435f0;"></i> Desarrollo de proyectos reales</div>
+                    <div><i class="fa-solid fa-check" style="color:#a435f0;"></i> Certificación oficial al aprobar</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="course-sidebar">
+                <div class="course-thumb" id="detalleThumb" style="height:140px; border-radius:6px; margin-bottom:1rem;">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+                <div class="sidebar-price" id="detallePrecio">$49.00 USD</div>
+                <p style="font-size:0.85rem; color:#555; margin-bottom:1.5rem;">Acceso ilimitado al contenido completo, evaluación y diploma oficial.</p>
+                <button class="btn-subscribe" onclick="abrirModalRegistro()">Iniciar suscripción</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="modalRegistro" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="cerrarModalRegistro()">&times;</button>
+            <h2>Registro de Estudiante</h2>
+            <form id="formRegistro">
+                <label>Usuario:</label>
+                <input type="text" id="regUsuario" required placeholder="Tu usuario">
+
+                <label>Correo Electrónico (Gmail):</label>
+                <input type="email" id="regCorreo" required placeholder="tu_correo@gmail.com">
+
+                <label>Contraseña:</label>
+                <input type="password" id="regPass" required placeholder="Crea una contraseña">
+
+                <button type="submit" class="btn-subscribe" style="margin-top: 1.5rem;">Registrarse</button>
+            </form>
+            <div style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem;">
+                <a href="#" onclick="cambiarLoginDesdeRegistro(event)" style="color: #a435f0; text-decoration: none; font-weight: 700;">¿Ya tienes una cuenta? Iniciar sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Cuenta Registrada con Éxito -->
+    <div id="modalExito" class="modal-overlay">
+        <div class="modal-content text-center" style="text-align: center;">
+            <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #34d399; margin-bottom: 1rem;"></i>
+            <h2>¡Cuenta registrada con éxito!</h2>
+            <p style="color:var(--text-muted); margin-bottom: 1.5rem;">Tus credenciales han sido guardadas correctamente.</p>
+            <button onclick="irAVerCursosDisponibles()" class="btn-subscribe">Ver cursos disponibles</button>
+        </div>
+    </div>
+
+    <!-- Modal Login -->
+    <div id="modalLogin" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="cerrarModalLogin()">&times;</button>
+            <h2 id="tituloLoginModal">Iniciar Sesión de Estudiante</h2>
+            <form id="formLogin">
+                <div id="camposEstudiante">
+                    <label>Usuario:</label>
+                    <input type="text" id="loginUsuario" placeholder="Tu usuario">
+
+                    <label>Correo Electrónico (Gmail):</label>
+                    <input type="email" id="loginCorreo" placeholder="tu_correo@gmail.com">
+                </div>
+                <div id="camposAdmin" style="display: none;">
+                    <label>Usuario Administrador:</label>
+                    <input type="text" id="loginAdminUser" placeholder="admin">
+                </div>
+                <label>Contraseña:</label>
+                <input type="password" id="loginPass" required placeholder="Tu contraseña">
+                <button type="submit" class="btn-subscribe" style="margin-top: 1.5rem;">Ingresar</button>
+            </form>
+            <div style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem;">
+                <a href="#" onclick="toggleModoAdmin(event)" id="enlaceModoAdmin" style="color: #a435f0; text-decoration: none; font-weight: 700;">Acceder como administrador</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

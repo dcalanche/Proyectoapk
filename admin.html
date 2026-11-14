@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrador - TecnoCampus</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="brand"><i class="fa-solid fa-shield-halved"></i> Panel Admin TecnoCampus</a>
+        <button class="btn-nav" onclick="cerrarSesion()" style="background:#dc2626; border:none;">Cerrar sesión</button>
+    </nav>
+
+    <main class="main-container" style="max-width: 1100px;">
+        <div class="tabs-header">
+            <button class="tab-btn active" onclick="cambiarTabAdmin(event, 'adminCursos')"><i class="fa-solid fa-book"></i> Probar Cursos y Exámenes</button>
+            <button class="tab-btn" onclick="cambiarTabAdmin(event, 'adminEstudiantes')"><i class="fa-solid fa-users"></i> Base de Datos de Estudiantes</button>
+        </div>
+
+        <div id="adminCursos" class="tab-content active">
+            <div class="course-card" style="padding: 2rem;">
+                <h2>Gestión y Prueba de Evaluaciones</h2>
+                <p style="color:var(--text-muted);">Como administrador, puedes ingresar a probar las evaluaciones para visualizar las respuestas correctas integradas.</p>
+                <div style="display:flex; gap:1rem; margin-top:1.5rem;">
+                    <button onclick="adminProbarCurso('Desarrollo Web Frontend Moderno ($49)')" class="btn-subscribe" style="max-width:300px;">Ver Curso Frontend</button>
+                    <button onclick="adminProbarCurso('Bases de Datos y Consultas SQL ($65)')" class="btn-subscribe" style="max-width:300px; background:#0d9488;">Ver Curso Bases de Datos</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="adminEstudiantes" class="tab-content">
+            <div class="course-card" style="padding: 2rem;">
+                <h2>Base de Datos de Estudiantes Registrados</h2>
+                <p style="color:var(--text-muted); font-size:0.9rem;">Registro en tiempo real de alumnos, cursos, notas y estados de aprobación.</p>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Estudiante</th>
+                                <th>Correo (Gmail)</th>
+                                <th>Curso Adquirido</th>
+                                <th>Calificación</th>
+                                <th>Estado</th>
+                                <th>Fecha</th>
+                                <th>Diploma</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaEstudiantesAdmin"></tbody>
+                    </table>
+                </div>
+
+                <div style="display:flex; gap:1rem; margin-top: 2rem; flex-wrap:wrap;">
+                    <button onclick="descargarCSV()" class="btn-subscribe" style="background:#10b981; max-width: 250px;"><i class="fa-solid fa-file-csv"></i> Descargar Base de Datos CSV</button>
+                    <button onclick="limpiarBaseDatos()" class="btn-subscribe" style="background:#dc2626; max-width: 250px;"><i class="fa-solid fa-trash"></i> Reiniciar Base de Datos</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

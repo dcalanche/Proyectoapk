@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación - TecnoCampus</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="curso.html" class="brand"><i class="fa-solid fa-arrow-left"></i> Volver al Curso</a>
+        <div>
+            <span id="adminBadge" style="background: rgba(220,38,38,0.2); color:#f87171; padding:0.4rem 0.8rem; border-radius:4px; font-size:0.8rem; font-weight:700; display:none;">
+                <i class="fa-solid fa-shield-halved"></i> MODO ADMIN (Respuestas Visibles)
+            </span>
+        </div>
+    </nav>
+
+    <main class="main-container" style="max-width: 800px;">
+        <h2 id="tituloEvaluacionPagina">Evaluación de Conocimientos</h2>
+        <p style="color:var(--text-muted); margin-bottom: 2rem;">Responde las 6 preguntas para validar tu aprendizaje.</p>
+
+        <form id="evalForm">
+            <!-- Contenedor Evaluación Frontend -->
+            <div id="evaluacionFrontend" style="display: none;">
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label style="font-weight:700;">1. ¿Qué etiqueta HTML se utiliza para definir un hipervínculo?</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: <a>" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem; display:flex; flex-direction:column; gap:0.5rem;">
+                        <label><input type="radio" name="fe_p1" value="incorrecta"> &lt;link&gt;</label>
+                        <label><input type="radio" name="fe_p1" value="correcta"> &lt;a&gt;</label>
+                        <label><input type="radio" name="fe_p1" value="incorrecta"> &lt;href&gt;</label>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label style="font-weight:700;">2. ¿Qué lenguaje se emplea principalmente para dar estilos y diseño visual?</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: CSS" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem; display:flex; flex-direction:column; gap:0.5rem;">
+                        <label><input type="radio" name="fe_p2" value="incorrecta"> HTML</label>
+                        <label><input type="radio" name="fe_p2" value="correcta"> CSS</label>
+                        <label><input type="radio" name="fe_p2" value="incorrecta"> JavaScript</label>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label for="fe_p3" style="font-weight:700;">3. ¿Qué propiedad de CSS modifica el color del texto?</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: color" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem;">
+                        <select id="fe_p3">
+                            <option value="">-- Seleccione una opción --</option>
+                            <option value="incorrecta">background-color</option>
+                            <option value="correcta">color</option>
+                            <option value="incorrecta">font-weight</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label for="fe_p4" style="font-weight:700;">4. ¿En qué etiqueta se incluye habitualmente un script de JavaScript externo?</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: <script>" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem;">
+                        <select id="fe_p4">
+                            <option value="">-- Seleccione una opción --</option>
+                            <option value="incorrecta">&lt;style&gt;</option>
+                            <option value="correcta">&lt;script&gt;</option>
+                            <option value="incorrecta">&lt;meta&gt;</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label style="font-weight:700;">5. Seleccione dos tecnologías que conformen el desarrollo web frontend básico:</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: HTML5 y CSS3" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem; display:flex; flex-direction:column; gap:0.5rem;">
+                        <label><input type="checkbox" name="fe_p5" value="correcta"> HTML5</label>
+                        <label><input type="checkbox" name="fe_p5" value="incorrecta"> C++</label>
+                        <label><input type="checkbox" name="fe_p5" value="correcta"> CSS3</label>
+                        <label><input type="checkbox" name="fe_p5" value="incorrecta"> Java</label>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label for="fe_p6" style="font-weight:700;">6. Escriba el nombre del lenguaje de programación que otorga interactividad a las páginas web:</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: JavaScript (o js)" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem;">
+                        <input type="text" id="fe_p6" placeholder="Escriba aquí...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor Evaluación SQL -->
+            <div id="evaluacionSql" style="display: none;">
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label style="font-weight:700;">1. ¿Qué significa la sigla SQL en el contexto de bases de datos?</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: Structured Query Language" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem; display:flex; flex-direction:column; gap:0.5rem;">
+                        <label><input type="radio" name="sql_p1" value="incorrecta"> Simple Quality Language</label>
+                        <label><input type="radio" name="sql_p1" value="correcta"> Structured Query Language</label>
+                        <label><input type="radio" name="sql_p1" value="incorrecta"> System Query Logic</label>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label style="font-weight:700;">2. ¿Qué sentencia de SQL se utiliza principalmente para consultar o recuperar datos de una tabla?</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: SELECT" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem; display:flex; flex-direction:column; gap:0.5rem;">
+                        <label><input type="radio" name="sql_p2" value="incorrecta"> INSERT</label>
+                        <label><input type="radio" name="sql_p2" value="correcta"> SELECT</label>
+                        <label><input type="radio" name="sql_p2" value="incorrecta"> UPDATE</label>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label for="sql_p3" style="font-weight:700;">3. ¿Qué restricción en una tabla identifica unívocamente a cada registro?</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: Primary Key (Clave Primaria)" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem;">
+                        <select id="sql_p3">
+                            <option value="">-- Seleccione una opción --</option>
+                            <option value="incorrecta">Foreign Key</option>
+                            <option value="correcta">Primary Key</option>
+                            <option value="incorrecta">Index Key</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label for="sql_p4" style="font-weight:700;">4. ¿Qué cláusula de SQL se utiliza para filtrar los resultados de una consulta?</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: WHERE" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem;">
+                        <select id="sql_p4">
+                            <option value="">-- Seleccione una opción --</option>
+                            <option value="incorrecta">GROUP BY</option>
+                            <option value="correcta">WHERE</option>
+                            <option value="incorrecta">ORDER BY</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label style="font-weight:700;">5. Seleccione dos operaciones básicas (CRUD) que se realizan en bases de datos relacionales:</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: Insertar (Create) y Consultar (Read)" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem; display:flex; flex-direction:column; gap:0.5rem;">
+                        <label><input type="checkbox" name="sql_p5" value="correcta"> Insertar (Create)</label>
+                        <label><input type="checkbox" name="sql_p5" value="incorrecta"> Compilar</label>
+                        <label><input type="checkbox" name="sql_p5" value="correcta"> Consultar (Read)</label>
+                        <label><input type="checkbox" name="sql_p5" value="incorrecta"> Renderizar</label>
+                    </div>
+                </div>
+
+                <div class="course-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <label for="sql_p5_text" style="font-weight:700;">6. Escriba el nombre del tipo de bases de datos que organizan la información en tablas relacionadas entre sí:</label>
+                    <div class="admin-helper" data-answer="Respuesta correcta: Relacionales" style="display:none; color:#38bdf8; font-weight:bold; font-size:0.85rem; margin-top:5px;"></div>
+                    <div style="margin-top:0.8rem;">
+                        <input type="text" id="sql_p6" placeholder="Escriba aquí...">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-subscribe">Enviar Examen</button>
+        </form>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
