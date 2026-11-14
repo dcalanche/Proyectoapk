@@ -1,3 +1,20 @@
 {
-    "name": "Daniel"
+  "name": "TecnoCampus Guatemala",
+  "short_name": "TecnoCampus",
+  "start_url": "/Proyectoapk/index.html",
+  "display": "standalone",
+  "background_color": "#1c1d1f",
+  "theme_color": "#5624d0",
+  "icons": [
+    {
+      "src": "/Proyectoapk/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Proyectoapk/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
