@@ -583,3 +583,8 @@ function adminProbarCurso(nombreCurso) {
     localStorage.setItem("usuarioActivo", JSON.stringify(adminData));
     window.location.href = "curso.html";
 }
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js");
+  });
+}
